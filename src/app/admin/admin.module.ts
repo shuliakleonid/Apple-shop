@@ -7,6 +7,7 @@ import {AddPageComponent} from './add-page/add-page.component';
 import {DashboardPageComponent} from './dashboard-page/dashboard-page.component';
 import {EditPageComponent} from './edit-page/edit-page.component';
 import {OrdersPageComponent} from './orders-page/orders-page.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import {OrdersPageComponent} from './orders-page/orders-page.component';
 
         ]
       }
-    ])
+    ]),
+    ReactiveFormsModule
 
   ],
   exports: [RouterModule],

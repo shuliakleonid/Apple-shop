@@ -20,8 +20,6 @@
       <small *ngIf="form.get('title').errors.required"> Enter name of product </small>
     </div>
   </div>
-
-
   <div class="form-control">
     <label for="photo">Photo</label>
     <quill-editor formControlName="photo" id="photo"></quill-editor>
@@ -38,5 +36,5 @@
       <small *ngIf="form.get('price').errors.required"> Enter price of product </small>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid || submitted">Logon</button>
+  <button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid || submitted">Add</button>
 </form>

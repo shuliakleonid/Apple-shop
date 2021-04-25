@@ -5,6 +5,8 @@
 export const environment = {
   apiKey: 'AIzaSyBBZYHifbrqX3lH3W2rNH5euqPehQZgXn4',
   production: false,
+  fbDbUrl: 'https://apple-shop-3c183-default-rtdb.europe-west1.firebasedatabase.app/',
+
 };
 
 /*

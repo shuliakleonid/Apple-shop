@@ -28,7 +28,6 @@ export class AuthService {
     }
   }
 
-
   get token() {
     const expData = new Date(localStorage.getItem('firebase-token-exp'));
     if (new Date() > expData) {

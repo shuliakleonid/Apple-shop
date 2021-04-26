@@ -11,33 +11,38 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {QuillModule} from 'ngx-quill';
 import {AuthInterseptor} from './shared/auth.interseptor';
-import { ProductComponent } from './product/product.component';
+import {ProductComponent} from './product/product.component';
+import { SortingPipe } from './shared/sorting.pipe';
 
-@NgModule({
-  declarations: [
+@NgModule({ // декоратор без которого мы не сможем создать модуль
+  declarations: [ // классы представлений который принадлежит модулю Angular имеет три типа классов представлений:
+    // компоненты (components), директивы (directives), каналы (pipes)
     AppComponent,
     MainLayoutComponent,
     MainPageComponent,
     ProductPageComponent,
     CartPageComponent,
     ProductComponent,
+    SortingPipe,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, // необходим для работы  с браузером
     AppRoutingModule,
-    FormsModule,
+    FormsModule, // необходим для работы с формами
     ReactiveFormsModule,
     HttpClientModule,
     QuillModule.forRoot(),
   ],
-  providers: [
+  providers: [ // классы, создающие сервисы используемые модулем
     {
       provide: HTTP_INTERCEPTORS,
       multi: true,
       useClass: AuthInterseptor
     }
   ],
-  bootstrap: [AppComponent]
+  exports: [
+  ],
+  bootstrap: [AppComponent] // корневой компонент, который вызывается по умолчанию  при загрузке приложения
 })
 export class AppModule {
 }

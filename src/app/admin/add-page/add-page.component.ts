@@ -15,8 +15,7 @@ export class AddPageComponent implements OnInit {
   constructor(
     private productServ: ProductService,
     private router: Router
-  ) {
-  }
+  ) {}
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -49,5 +48,4 @@ export class AddPageComponent implements OnInit {
       }
     );
   }
-
 }

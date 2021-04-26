@@ -7,13 +7,16 @@ import {AddPageComponent} from './add-page/add-page.component';
 import {DashboardPageComponent} from './dashboard-page/dashboard-page.component';
 import {EditPageComponent} from './edit-page/edit-page.component';
 import {OrdersPageComponent} from './orders-page/orders-page.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AuthGuard} from '../shared/auth.guard';
 import {QuillModule} from 'ngx-quill';
+import {SearchPipe} from '../shared/search.pipe';
 
 @NgModule({
   imports: [
+    FormsModule,
     CommonModule,
+    ReactiveFormsModule,
     QuillModule.forRoot(),
     RouterModule.forChild([
       {
@@ -21,19 +24,25 @@ import {QuillModule} from 'ngx-quill';
           {path: '', redirectTo: '/admin/login', pathMatch: 'full'},
           {path: 'login', component: LoginPageComponent},
           {path: 'dashboard', component: DashboardPageComponent, canActivate: [AuthGuard]},
-          {path: 'product', component: AddPageComponent, canActivate: [AuthGuard]},
+          {path: 'add', component: AddPageComponent, canActivate: [AuthGuard]},
           {path: 'orders', component: OrdersPageComponent, canActivate: [AuthGuard]},
           {path: 'product/:id/edit', component: EditPageComponent, canActivate: [AuthGuard]},
 
         ]
       }
     ]),
-    ReactiveFormsModule
 
   ],
   exports: [RouterModule],
-  declarations: [AdminLayoutComponent, LoginPageComponent, AddPageComponent, DashboardPageComponent, EditPageComponent, OrdersPageComponent]
+  declarations: [
+    AdminLayoutComponent,
+    SearchPipe,
+    LoginPageComponent,
+    AddPageComponent,
+    DashboardPageComponent,
+    EditPageComponent,
+    OrdersPageComponent
+  ]
 })
 export class AdminModule {
-
 }

@@ -16,7 +16,6 @@ const routes: Routes = [
     ]
   },
   {
-    // path: 'admin', loadChildren: './admin/admin.module#AdmineModule'
     path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
   }
 ];
@@ -25,5 +24,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

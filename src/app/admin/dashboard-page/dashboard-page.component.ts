@@ -11,6 +11,7 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
   products = [];
   pSub: Subscription;
   rSub: Subscription;
+  productName;
 
   constructor(private productServ: ProductService) {
   }

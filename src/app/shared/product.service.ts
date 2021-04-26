@@ -9,6 +9,7 @@ import {FbResponse, Product} from './ interfases';
 })
 export class ProductService {
   type = 'Phone';
+  cartProducts: Product [] = [];
 
   constructor(private http: HttpClient) {
   }
@@ -58,6 +59,14 @@ export class ProductService {
 
   setType(type: string) {
     this.type = type;
+  }
 
+  addProduct(product) {
+    this.cartProducts.push(product);
+  }
+
+  deleteProduct(product) {
+    console.log(this.cartProducts.filter(p => p !== product));
+    this.cartProducts.filter(p => p !== product);
   }
 }

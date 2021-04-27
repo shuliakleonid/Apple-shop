@@ -13,6 +13,7 @@ import {OrderService} from '../shared/order.service';
 export class CartPageComponent implements OnInit {
   cartProducts: Product[] = [];
   totalPrice = 0;
+  added = '';
   form: FormGroup;
   submitted = false;
 
@@ -59,6 +60,7 @@ export class CartPageComponent implements OnInit {
 
     this.orderServ.create(order).subscribe(res => {
         this.form.reset();
+        this.added = 'Delivery is framed';
         this.submitted = false;
       }
     );

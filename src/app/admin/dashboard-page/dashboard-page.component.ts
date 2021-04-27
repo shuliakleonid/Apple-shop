@@ -19,6 +19,7 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.productServ.getAll().subscribe(products => {
       this.products = products;
+      console.log(products);
     });
   }
 
@@ -33,7 +34,7 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
   }
 
   remove(id) {
-    this.productServ.remove(id).subscribe(() =>
+    this.rSub =  this.productServ.remove(id).subscribe(() =>
       this.products = this.products.filter(product => product.id !== id));
   }
 }

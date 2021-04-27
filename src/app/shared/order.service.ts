@@ -18,7 +18,7 @@ export class OrderService {
         return {
           ...order,
           id: res.name,
-          date: new Date(order.date)
+          date: new Date(order.data)
         };
       }));
   }
@@ -30,7 +30,7 @@ export class OrderService {
           .map(key => ({
             ...res[key],
             id: key,
-            date: new Date(res[key].date)
+            date: new Date(res[key].data)
           }));
       }));
   }

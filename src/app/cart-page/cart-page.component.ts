@@ -35,7 +35,6 @@ export class CartPageComponent implements OnInit {
       address: new FormControl(null, Validators.required),
       payment: new FormControl('Cash'),
     });
-    console.log(this.form, 'form');
   }
 
   deleteProduct(product: Product) {

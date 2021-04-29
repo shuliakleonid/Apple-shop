@@ -65,8 +65,4 @@ export class ProductService {
     this.cartProducts.push(product);
   }
 
-  deleteProduct(product) {
-    console.log(this.cartProducts.filter(p => p !== product));
-    this.cartProducts.filter(p => p !== product);
-  }
 }

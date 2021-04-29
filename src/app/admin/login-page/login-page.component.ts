@@ -36,7 +36,6 @@ export class LoginPageComponent implements OnInit {
       returnSecureToken: true
     };
     this.auth.login(user).subscribe(res => {
-        console.log(res);
         this.form.reset;
         this.router.navigate(['/admin', 'dashboard']);
         this.submitted = false;
